@@ -54,7 +54,7 @@ listOfCountries.innerHTML = '';
 function renderListOfCountries(countries) {
     const listMarkup = countries.map(country => {
         return `<li style = 'list-style: none; display: flex; gap: 10px'>
-        <img src = '${country.flags.svg}' alt = 'flag' width = '80' height = '40'>
+        <img src = '${country.flags.svg}' alt = 'flag' width = '50'>
         <p>${country.name.official}</p>
         </li>`
     }).join('');
