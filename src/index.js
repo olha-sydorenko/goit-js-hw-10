@@ -6,7 +6,8 @@ import { Notify } from 'notiflix';
 const DEBOUNCE_DELAY = 300;
 
 const countryCard = document.querySelector('.country-info');
-const listOfCountries = document.querySelector('.country-list')
+const listOfCountries = document.querySelector('.country-list');
+
 
 
 
@@ -38,9 +39,9 @@ function renderCountryCard(countries) {
     return `<div> 
     <img src = '${country.flags.svg}' alt = 'flag' width = '50'>
     <h1>${country.name.official}</h1>
-    <p>Capital: ${country.capital}</p>
-    <p>Population: ${country.population}</p>
-    <p>Languages: ${Object.values(country.languages)}</p>
+    <p class='text'>Capital: ${country.capital}</p>
+    <p class='text'>Population: ${country.population}</p>
+    <p class='text'>Languages: ${Object.values(country.languages)}</p>
     </div>`   
 }).join('');
 countryCard.innerHTML = markup;
@@ -49,8 +50,8 @@ listOfCountries.innerHTML = '';
 
 function renderListOfCountries(countries) {
     const listMarkup = countries.map(country => {
-        return `<li>
-        <img src = '${country.flags.svg}' alt = 'flag' width = '30'>
+        return `<li style = 'list-style: none; display: flex; gap: 10px'>
+        <img src = '${country.flags.svg}' alt = 'flag' width = '50'>
         <p>${country.name.official}</p>
         </li>`
     }).join('');
